@@ -3,91 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaThumNa | Gaming Database</title>
+    <title>TaThumNa | Home Portal</title>
     <style>
-        /* CSS: ส่วนตกแต่งหน้าตาเว็บ */
+        :root {
+            --primary: #66fcf1;
+            --bg: #0b0c10;
+            --card: #1f2833;
+        }
         body {
-            background-color: #0b0c10; /* สีดำลึก */
-            color: #c5c6c7; /* สีเทาสว่าง */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             margin: 0;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
         header {
-            background-color: #1f2833;
-            padding: 80px 20px;
-            border-bottom: 2px solid #66fcf1; /* เส้นสีฟ้า Cyan สว่าง */
+            padding: 60px 20px;
+            text-align: center;
         }
-        h1 {
-            color: #66fcf1;
-            font-size: 3.5rem;
-            margin: 0;
-            letter-spacing: 5px;
-        }
-        .intro {
-            padding: 50px 20px;
-            font-size: 1.2rem;
-        }
-        /* ระบบกล่องข้อมูล (Grid) */
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+        h1 { color: var(--primary); font-size: 3rem; letter-spacing: 3px; margin: 0; }
+        
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 90%;
+            max-width: 1100px;
             padding: 20px;
         }
-        .card {
-            background-color: #1f2833;
-            border: 1px solid #45a29e;
-            border-radius: 12px;
-            padding: 30px;
-            width: 280px;
+
+        /* ตกแต่งปุ่ม Link */
+        .portal-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .portal-card {
+            background-color: var(--card);
+            border: 2px solid #45a29e;
+            border-radius: 15px;
+            padding: 40px 20px;
+            text-align: center;
             transition: 0.3s;
+            cursor: pointer;
         }
-        .card:hover {
-            border-color: #66fcf1;
+
+        .portal-card:hover {
+            border-color: var(--primary);
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(102, 252, 241, 0.2);
+            box-shadow: 0 10px 30px rgba(102, 252, 241, 0.2);
         }
-        .card h3 { color: #66fcf1; }
-        footer {
-            margin-top: 100px;
-            padding: 30px;
-            color: #45a29e;
-            font-size: 0.8rem;
-            border-top: 1px solid #1f2833;
-        }
+
+        .portal-card h2 { color: var(--primary); margin-bottom: 10px; }
+        .portal-card p { color: #c5c6c7; font-size: 0.9rem; }
+
+        footer { margin-top: auto; padding: 40px; color: #45a29e; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>TATHUMNA</h1>
-        <p>THE TRUTHFUL GAMING DATABASE</p>
+        <p>ยินดีต้อนรับสู่ศูนย์กลางข้อมูลและบริการ</p>
     </header>
 
-    <div class="intro">
-        <h2>"ความไว้วางใจ สร้างได้จากข้อมูลที่ถูกต้อง"</h2>
-        <p>เจาะลึกข้อมูลไอเทมหายาก โอกาสดรอป</p>
-    </div>
+    <div class="portal-grid">
+        <a href="game-info.html" class="portal-link">
+            <div class="portal-card">
+                <h2>ข้อมูลเกม</h2>
+                <p>เจาะลึกเทคนิค ไอเทม และเงื่อนไขการได้รับ</p>
+            </div>
+        </a>
 
-    <div class="grid">
-        <div class="card">
-            <h3>Blox Fruits</h3>
-            <p>ดาบระดับ Mythical และเงื่อนไงการครอบครอง</p>
-        </div>
-        <div class="card">
-            <h3>Free Fire</h3>
-            <p>คลังแสงไอเทมหาสะสมและ Rare Items</p>
-        </div>
-        <div class="card">
-            <h3>Valuation</h3>
-            <p>คู่มือประเมินราคาตลาดไอเทมสะสม</p>
-        </div>
+        <a href="store.html" class="portal-link">
+            <div class="portal-card">
+                <h2>ร้านค้า</h2>
+                <p>เลือกซื้อไอเทมและบริการคุณภาพจากเรา</p>
+            </div>
+        </a>
+
+        <a href="valuation.html" class="portal-link">
+            <div class="portal-card">
+                <h2>ประเมินราคา</h2>
+                <p>ตรวจสอบมูลค่าไอเทมในตลาดกลางให้แม่นยำ</p>
+            </div>
+        </a>
     </div>
 
     <footer>
-        &copy; 2026 TATHUMNA STUDIO | สร้างด้วย Code ทุกบรรทัดโดย TaThumNa
+        &copy; 2026 TaThumNa Studio | จัดการระบบโดยเจ้าของตัวจริง
     </footer>
 
 </body>
